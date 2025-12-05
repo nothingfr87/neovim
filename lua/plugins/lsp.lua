@@ -23,6 +23,9 @@ return {
 					"pyright",
 					"clangd",
 					"lua_ls",
+					"html",
+					"cssls",
+					"eslint",
 				},
 			})
 
