@@ -1,37 +1,18 @@
 return {
 	{
-		"ellisonleao/gruvbox.nvim",
-		lazy = false,
-		priority = 1000,
-		opts = {
-			contrast = "hard",
-		},
-	},
-	{
-		"rose-pine/neovim",
-		name = "rose-pine",
-		lazy = false,
-		priority = 1000,
-		opts = {},
-	},
-	{
 		"folke/tokyonight.nvim",
 		lazy = false,
 		priority = 1000,
+		opts = {
+			style = "night",
+		},
+	},
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		main = "ibl",
+		---@module "ibl"
+		---@type ibl.config
 		opts = {},
-	},
-	{
-		"xiyaowong/transparent.nvim",
-		lazy = false,
-		config = function()
-			require("transparent").setup()
-		end,
-	},
-	{
-		"arcticicestudio/nord-vim",
-		name = "nord",
-		lazy = false,
-		config = function() end,
 	},
 	{
 		"MeanderingProgrammer/render-markdown.nvim",

@@ -9,6 +9,9 @@ o.expandtab = true
 o.softtabstop = 2
 
 vim.diagnostic.config({ virtual_text = true })
+vim.opt.cursorline = true
+
+vim.api.nvim_set_hl(0, "CursorLineNr", { bold = true })
 
 o.relativenumber = true
 o.number = true
@@ -40,4 +43,4 @@ require("config.lazy")
 require("config.mappings")
 
 -- Set Theme
-cmd([[colorscheme rose-pine]])
+cmd([[colorscheme tokyonight]])

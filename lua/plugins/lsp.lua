@@ -23,15 +23,16 @@ return {
 					"pyright",
 					"clangd",
 					"lua_ls",
+					"eslint",
 					"html",
 					"cssls",
-					"eslint",
+					"emmet_ls",
 				},
 			})
 
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-			servers = { "pyright", "clangd", "lua_ls" }
+			servers = { "pyright", "clangd", "lua_ls", "eslint", "html", "cssls", "emmet_ls" }
 
 			for _, lsp in ipairs(servers) do
 				vim.lsp.config(lsp, {
@@ -122,6 +123,9 @@ return {
 					python = { "autopep8" },
 					cpp = { "clang-format" },
 					c = { "clang-format" },
+					html = { "prettier" },
+					css = { "prettier" },
+					javascript = { "prettier" },
 				},
 			})
 
