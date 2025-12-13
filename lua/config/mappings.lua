@@ -10,7 +10,9 @@ set("n", "<C-g>", ":Telescope diagnostics<CR>", { desc = "Open LSP diagnostics w
 
 -- Bufferline
 set("n", "<Tab>", ":BufferLineCycleNext<CR>", { desc = "Cycle Through Tabs" })
+set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { desc = "Cycle Through Previuos Tabs" })
 set("n", "<leader>w", ":BufferLinePickClose<CR>", { desc = "Pick a Tab to close" })
+set("n", "<leader>p", ":BufferLinePick<CR>", { desc = "Pick a Tab to open" })
 
 -- Global Mappings
 set("n", "<C-t>", ":term<CR>", { desc = "Open Terminal Window" })
