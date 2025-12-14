@@ -59,7 +59,7 @@ return {
 				dotfiles = true,
 			},
 			view = {
-				width = 10,
+				width = 25,
 				side = "left",
 				number = false,
 			},

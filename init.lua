@@ -8,13 +8,10 @@ o.shiftwidth = 2
 o.expandtab = true
 o.softtabstop = 2
 
-vim.diagnostic.config({ virtual_text = true })
-vim.opt.cursorline = true
-
-vim.api.nvim_set_hl(0, "CursorLineNr", { bold = true })
-
 o.relativenumber = true
 o.number = true
+
+o.cursorline = true
 
 o.mousemoveevent = true
 
@@ -33,10 +30,14 @@ g.loaded_netrwPlugin = 1
 
 o.clipboard = "unnamedplus"
 
+vim.diagnostic.config({ virtual_text = true })
+vim.api.nvim_set_hl(0, "CursorLineNr", { bold = true })
+
 cmd("cnoreabbrev q q!")
 cmd("cnoreabbrev qa qall!")
 cmd("cnoreabbrev w w!")
 cmd("cnoreabbrev wq wq!")
+cmd("syntax on")
 
 -- Use Lazy.nvim
 require("config.lazy")
