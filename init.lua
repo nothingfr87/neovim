@@ -16,6 +16,8 @@ vim.api.nvim_set_hl(0, "CursorLineNr", { bold = true })
 o.relativenumber = true
 o.number = true
 
+o.mousemoveevent = true
+
 o.termguicolors = true
 
 o.swapfile = false
@@ -44,3 +46,6 @@ require("config.mappings")
 
 -- Set Theme
 cmd([[colorscheme tokyonight]])
+
+-- Use nvim-notify
+vim.notify = require("notify")
