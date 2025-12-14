@@ -27,6 +27,7 @@ return {
 					"html",
 					"cssls",
 					"emmet_ls",
+					"gopls",
 				},
 			})
 
