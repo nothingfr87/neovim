@@ -1,5 +1,10 @@
 return {
 	{
+		"vyfor/cord.nvim",
+		build = ":Cord update",
+		event = "VeryLazy",
+	},
+	{
 		"folke/which-key.nvim",
 		event = "VeryLazy",
 		opts = {

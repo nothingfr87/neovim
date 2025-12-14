@@ -8,6 +8,14 @@ return {
 		},
 	},
 	{
+		"Djancyp/better-comments.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("better-comment").Setup()
+		end,
+	},
+	{
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
 		---@module "ibl"
@@ -34,6 +42,12 @@ return {
 		end,
 	},
 	{
+		"rcarriga/nvim-notify",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+	},
+	{
 		"nvim-tree/nvim-tree.lua",
 		version = "*",
 		lazy = false,
@@ -45,7 +59,7 @@ return {
 				dotfiles = true,
 			},
 			view = {
-				width = 30,
+				width = 10,
 				side = "left",
 				number = false,
 			},
