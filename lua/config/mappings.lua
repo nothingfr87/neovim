@@ -7,7 +7,6 @@ set("n", "<leader>e", ":NvimTreeFocus<CR>", { desc = "Focus NvimTree" })
 -- Telescope
 set("n", "<C-f>", ":Telescope find_files<CR>", { desc = "Open telescope" })
 set("n", "<C-g>", ":Telescope live_grep<CR>", { desc = "Search Words in Telescope" })
-set("n", "<leader>g", "Telescope git_commits<CR>", { desc = "Show Git Commits" })
 
 -- Bufferline
 set("n", "<Tab>", ":BufferLineCycleNext<CR>", { desc = "Cycle Through Tabs" })
