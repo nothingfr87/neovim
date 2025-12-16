@@ -46,7 +46,7 @@ require("config.lazy")
 require("config.mappings")
 
 -- Set Theme
-cmd([[colorscheme tokyonight]])
+cmd([[colorscheme pywal]])
 
 -- Use nvim-notify
 vim.notify = require("notify")
