@@ -8,6 +8,17 @@ return {
 		},
 	},
 	{
+		"xiyaowong/transparent.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+	},
+	{
+		"AlphaTechnolog/pywal.nvim",
+		lazy = false,
+		priority = 1000,
+	},
+	{
 		"Djancyp/better-comments.nvim",
 		lazy = false,
 		priority = 1000,
