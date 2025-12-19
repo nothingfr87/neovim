@@ -33,15 +33,23 @@ return {
 
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-			servers = { "pyright", "clangd", "lua_ls", "ts_ls", "html", "cssls", "emmet_ls" }
+			servers = { "lua_ls", "pyright", "clangd", "ts_ls", "html", "cssls", "emmet_ls", "gopls" }
 
 			for _, lsp in ipairs(servers) do
 				vim.lsp.config(lsp, {
 					capabilities = capabilities,
 				})
 			end
-
 			vim.lsp.enable(servers)
+
+			-- Fixed lua_ls autoattach
+			vim.api.nvim_create_autocmd("VimEnter", {
+				callback = function()
+					if vim.bo.filetype == "lua" then
+						vim.lsp.enable("lua_ls")
+					end
+				end,
+			})
 		end,
 	},
 

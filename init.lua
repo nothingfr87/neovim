@@ -38,6 +38,7 @@ cmd("cnoreabbrev qa qall!")
 cmd("cnoreabbrev w w!")
 cmd("cnoreabbrev wq wq!")
 cmd("syntax on")
+cmd("filetype plugin indent on")
 
 -- Use Lazy.nvim
 require("config.lazy")
@@ -45,8 +46,14 @@ require("config.lazy")
 -- Use my mappings
 require("config.mappings")
 
+-- Transparency
+local function enable_transparency()
+	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+end
+
 -- Set Theme
-cmd([[colorscheme pywal]])
+cmd("colorscheme pywal")
+enable_transparency()
 
 -- Use nvim-notify
 vim.notify = require("notify")

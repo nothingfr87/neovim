@@ -8,15 +8,10 @@ return {
 		},
 	},
 	{
-		"xiyaowong/transparent.nvim",
-		lazy = false,
-		priority = 1000,
-		opts = {},
-	},
-	{
 		"AlphaTechnolog/pywal.nvim",
 		lazy = false,
 		priority = 1000,
+		opts = {},
 	},
 	{
 		"Djancyp/better-comments.nvim",
@@ -56,7 +51,9 @@ return {
 		"rcarriga/nvim-notify",
 		lazy = false,
 		priority = 1000,
-		opts = {},
+		opts = {
+			background_colour = "#000000",
+		},
 	},
 	{
 		"nvim-tree/nvim-tree.lua",
