@@ -31,9 +31,9 @@ return {
 				},
 			})
 
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+			local capabilities = require("blink.cmp").get_lsp_capabilities()
 
-			servers = { "lua_ls", "pyright", "clangd", "ts_ls", "html", "cssls", "emmet_ls", "gopls" }
+			servers = { "pyright", "clangd", "ts_ls", "html", "cssls", "emmet_ls", "gopls" }
 
 			for _, lsp in ipairs(servers) do
 				vim.lsp.config(lsp, {
@@ -55,71 +55,34 @@ return {
 
 	-- CMP
 	{
-		"hrsh7th/nvim-cmp",
-		dependencies = {
-			"hrsh7th/cmp-nvim-lsp",
-			"hrsh7th/cmp-buffer",
-			"hrsh7th/cmp-path",
-			"hrsh7th/cmp-cmdline",
-			"L3MON4D3/LuaSnip",
-			"hrsh7th/cmp-nvim-lsp-signature-help",
+		"saghen/blink.cmp",
+		version = "1.*",
+		dependencies = { "rafamadriz/friendly-snippets" },
+
+		---@module 'blink.cmp'
+		---@type blink.cmp.Config
+		opts = {
+			keymap = {
+				preset = "default",
+				["<CR>"] = { "accept", "fallback" },
+				["<C-e>"] = { "cancel" },
+				["<C-Space>"] = { "show" },
+			},
+
+			appearance = {
+				nerd_font_variant = "mono",
+			},
+
+			completion = {
+				documentation = {
+					auto_show = true,
+				},
+			},
+			sources = {
+				default = { "lsp", "path", "snippets", "buffer" },
+			},
 		},
-		config = function()
-			local cmp = require("cmp")
-			local luasnip = require("luasnip")
-
-			cmp.setup({
-				window = {
-					completion = cmp.config.window.bordered({
-						border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-						winhighlight = "Normal:NormalFloat,FloatBorder:White,CursorLine:PmenuSel,Search:None",
-					}),
-					documentation = cmp.config.window.bordered({
-						border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-						winhighlight = "Normal:NormalFloat,FloatBorder:White,CursorLine:PmenuSel,Search:None",
-					}),
-				},
-				snippet = {
-					expand = function(args)
-						luasnip.lsp_expand(args.body)
-					end,
-				},
-				completion = {
-					autocomplete = { require("cmp.types").cmp.TriggerEvent.TextChanged },
-				},
-				mapping = cmp.mapping.preset.insert({
-					["<C-b>"] = cmp.mapping.scroll_docs(-4),
-					["<C-f>"] = cmp.mapping.scroll_docs(4),
-					["<C-Space>"] = cmp.mapping.complete(),
-					["<C-e>"] = cmp.mapping.abort(),
-					["<CR>"] = cmp.mapping.confirm({ select = true }),
-				}),
-				sources = cmp.config.sources({
-					{ name = "path" },
-					{ name = "nvim_lsp" },
-					{ name = "luasnip" },
-					{ name = "nvim_lsp_signature_help" },
-				}, {
-					{ name = "buffer" },
-				}),
-			})
-
-			-- Cmdline completion
-			cmp.setup.cmdline({ "/", "?" }, {
-				mapping = cmp.mapping.preset.cmdline(),
-				sources = { { name = "buffer" } },
-			})
-
-			cmp.setup.cmdline(":", {
-				mapping = cmp.mapping.preset.cmdline(),
-				sources = cmp.config.sources({
-					{ name = "path" },
-				}, {
-					{ name = "cmdline" },
-				}),
-				matching = { disallow_symbol_nonprefix_matching = false },
-			})
-		end,
+		opts_extend = { "sources.default" },
 	},
 
 	-- Conform

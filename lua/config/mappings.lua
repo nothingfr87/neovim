@@ -14,6 +14,10 @@ set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { desc = "Cycle Through Previuos
 set("n", "<leader>w", ":BufferLinePickClose<CR>", { desc = "Pick a Tab to close" })
 set("n", "<leader>p", ":BufferLinePick<CR>", { desc = "Pick a Tab to open" })
 
+-- UFO
+vim.keymap.set("n", "zR", require("ufo").openAllFolds)
+vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
+
 -- Global Mappings
 set("n", "<C-t>", ":term<CR>", { desc = "Open Terminal Window" })
 set("n", "<leader>ts", ":split<CR>", { desc = "Split Neovim Window Horizantly" })

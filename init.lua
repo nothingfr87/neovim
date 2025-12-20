@@ -30,8 +30,18 @@ g.loaded_netrwPlugin = 1
 
 o.clipboard = "unnamedplus"
 
+o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+o.foldcolumn = "1"
+o.foldlevel = 99
+o.foldlevelstart = 99
+o.foldenable = true
+
 vim.diagnostic.config({ virtual_text = true })
 vim.api.nvim_set_hl(0, "CursorLineNr", { bold = true })
+
+vim.api.nvim_set_hl(0, "MiniIndentscopeSymbol", {
+	link = "NonText",
+})
 
 cmd("cnoreabbrev q q!")
 cmd("cnoreabbrev qa qall!")
@@ -46,14 +56,8 @@ require("config.lazy")
 -- Use my mappings
 require("config.mappings")
 
--- Transparency
-local function enable_transparency()
-	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-end
-
 -- Set Theme
 cmd("colorscheme pywal")
-enable_transparency()
 
 -- Use nvim-notify
 vim.notify = require("notify")
