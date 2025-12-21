@@ -77,9 +77,12 @@ return {
 				documentation = {
 					auto_show = true,
 				},
+				trigger = {
+					show_on_keyword = true,
+				},
 			},
 			sources = {
-				default = { "lsp", "path", "snippets", "buffer" },
+				default = { "lsp", "path", "snippets", "buffer", "cmdline" },
 			},
 		},
 		opts_extend = { "sources.default" },
